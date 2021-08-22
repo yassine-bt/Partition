@@ -29,9 +29,10 @@ public class Tools {
         List<List<Integer>> result = new ArrayList<>();
 
         List<Integer> subList = new ArrayList<>(taille);
+        Iterator<Integer> iterator = liste.iterator();
         int compteur = 0;
 
-        for (Iterator<Integer> iterator = liste.iterator(); iterator.hasNext(); ) {
+        while(iterator.hasNext()) {
             Integer element = iterator.next();
             subList.add(element);
             compteur++;

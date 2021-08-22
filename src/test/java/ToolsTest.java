@@ -23,7 +23,7 @@ public class ToolsTest {
 
         List<List<Integer>> result = Tools.partitionManuelle(liste, 3);
         Assert.assertNotNull(result);
-        Assert.assertEquals(result.toString(), "[[1, 2, 3], [4, 5, 6], [7]]");
+        Assert.assertEquals("[[1, 2, 3], [4, 5, 6], [7]]", result.toString());
     }
 
     @Test
@@ -31,7 +31,7 @@ public class ToolsTest {
         List<Integer> liste = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
         List<List<Integer>> result = Tools.partition(liste, 2);
         Assert.assertNotNull(result);
-        Assert.assertEquals(result.toString(), "[[1, 2], [3, 4], [5, 6], [7]]");
+        Assert.assertEquals("[[1, 2], [3, 4], [5, 6], [7]]", result.toString());
     }
 
     @Test
@@ -41,7 +41,7 @@ public class ToolsTest {
         List<List<Integer>> result2 = Tools.partitionManuelle(liste, 1);
         Assert.assertNotNull(result1);
         Assert.assertEquals(result1.toString(), result2.toString());
-        Assert.assertEquals(result1.toString(), "[[1], [2], [3], [4], [5], [6], [7]]");
+        Assert.assertEquals("[[1], [2], [3], [4], [5], [6], [7]]", result1.toString());
 
     }
 }
