@@ -16,7 +16,7 @@ public class Tools {
      * @return List<List < Integer>>
      * @throws Exception
      */
-    public List<List<Integer>> partitionManuelle(List<Integer> liste, Integer taille) throws Exception {
+    public static List<List<Integer>> partitionManuelle(List<Integer> liste, Integer taille) throws Exception {
 
         if (liste == null || liste.isEmpty()) {
             throw new Exception("La Liste est null ou vide");
@@ -56,7 +56,7 @@ public class Tools {
      * @return List<List < Integer>>
      * @throws Exception
      */
-    public List<List<Integer>> partition(List<Integer> liste, Integer taille) throws Exception {
+    public static List<List<Integer>> partition(List<Integer> liste, Integer taille) throws Exception {
 
         if (liste == null || liste.isEmpty()) {
             throw new Exception("La Liste est null ou vide");
