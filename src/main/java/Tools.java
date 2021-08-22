@@ -18,21 +18,14 @@ public class Tools {
      */
     public static List<List<Integer>> partitionManuelle(List<Integer> liste, Integer taille) throws Exception {
 
-        if (liste == null || liste.isEmpty()) {
-            throw new Exception("La Liste est null ou vide");
-        }
-
-        if (taille == null || taille <= 0) {
-            throw new Exception("La taille des sousliste est null ou <= 0");
-        }
-
+        checkParams(liste, taille);
         List<List<Integer>> result = new ArrayList<>();
 
         List<Integer> subList = new ArrayList<>(taille);
         Iterator<Integer> iterator = liste.iterator();
         int compteur = 0;
 
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             Integer element = iterator.next();
             subList.add(element);
             compteur++;
@@ -59,14 +52,7 @@ public class Tools {
      */
     public static List<List<Integer>> partition(List<Integer> liste, Integer taille) throws Exception {
 
-        if (liste == null || liste.isEmpty()) {
-            throw new Exception("La Liste est null ou vide");
-        }
-
-        if (taille == null || taille <= 0) {
-            throw new Exception("La taille des sousliste est null ou <= 0");
-        }
-
+        checkParams(liste, taille);
         List<List<Integer>> result = new ArrayList<>();
         int index = 0;
 
@@ -82,6 +68,16 @@ public class Tools {
             result.add(liste.subList(index, (index + taille)));
             index += taille;
 
+        }
+    }
+
+    static void checkParams(List<Integer> liste, Integer taille) throws Exception {
+        if (liste == null || liste.isEmpty()) {
+            throw new Exception("La Liste est null ou vide");
+        }
+
+        if (taille == null || taille <= 0) {
+            throw new Exception("La taille des sousliste est null ou <= 0");
         }
     }
 

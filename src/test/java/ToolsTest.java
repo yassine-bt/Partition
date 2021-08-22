@@ -6,6 +6,7 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @RunWith(PowerMockRunner.class)
@@ -43,5 +44,15 @@ public class ToolsTest {
         Assert.assertEquals(result1.toString(), result2.toString());
         Assert.assertEquals("[[1], [2], [3], [4], [5], [6], [7]]", result1.toString());
 
+    }
+
+    @Test
+    public void testCheckParams() {
+        List<Integer> liste = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+        Assert.assertThrows(Exception.class,()-> Tools.checkParams(liste, null));
+        Assert.assertThrows(Exception.class,()-> Tools.checkParams(Collections.emptyList(), null));
+        Assert.assertThrows(Exception.class,()-> Tools.checkParams(liste, 0));
+        Assert.assertThrows(Exception.class,()-> Tools.checkParams(liste, -5));
+        Assert.assertThrows(Exception.class,()-> Tools.checkParams(null, 5));
     }
 }
